@@ -3,7 +3,7 @@ export default function orderByProps(obj, order) {
   const res = []
 
   for (let key of order) {
-    if (obj.hasOwnProperty(key)) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
       res.push({key: key, value: obj[key]})
     } else {
       throw Error("Не найдено " + key)
